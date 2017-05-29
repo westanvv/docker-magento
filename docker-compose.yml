@@ -13,7 +13,7 @@ services:
       - db
 
   db:
-    image: mysql
+    image: mariadb
     environment:
       MYSQL_DATABASE: db_project
       MYSQL_ROOT_PASSWORD: root
@@ -22,7 +22,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
       - ./docker-dirs/db:/home
-      - ./docker-config/mysql:/etc/mysql/conf.d
+#      - ./docker-config/mysql:/etc/mysql/conf.d
     ports:
       - "3306:3306"
 
